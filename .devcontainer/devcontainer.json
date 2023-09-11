@@ -1,7 +1,9 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "hostRequirements": {
-    "cpus": 4
+    "cpus": 16,
+    "memory": "64gb",
+    "storage": "128gb"
   },
   "waitFor": "onCreateCommand",
   "updateContentCommand": "python3 -m pip install -r requirements.txt",
@@ -16,5 +18,11 @@
         "ms-python.python"
       ]
     }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/nvidia-cuda:1": {
+      "installCudnn": true
+    }
   }
+  
 }
